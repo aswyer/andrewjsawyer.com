@@ -1,0 +1,218 @@
+@media (max-width: 1024px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  .RLmargins {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+  }
+  .listing {
+    margin-top: 5em !important;
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+  }
+  .posting img {
+    width: 60% !important;
+  }
+
+  #regulartext {
+    width: 60% !important;
+  }
+
+  br {
+    display: none !important;
+  }
+
+}
+
+@media (max-width: 640px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  .sec1words p:nth-child(1) {
+    margin-top: 3em !important;
+  }
+
+  #regulartext {
+    width: 100% !important;
+  }
+  .RLmargins {
+    padding-left: 1.5em !important;
+    padding-right: 1.5em !important;
+  }
+  .listing {
+    margin-top: 5em !important;
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+  }
+  .posting img {
+    width: 100% !important;
+  }
+
+  br {
+    display: block !important;
+  }
+
+  .appposting img {
+    width: 100% !important;
+    /* display: block !important; */
+    float: left !important;
+  }
+
+  .artposting img {
+    width: 100% !important;
+    /* display: block !important; */
+    float: left !important;
+  }
+
+}
+
+
+
+br {
+  display: none;
+}
+
+.RLmargins {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.sec1 {
+  background-image: url("../assets/header-background/bg.png");
+  background-size: cover;
+  background-position: center;
+  /* height: 30em; */
+  /* position: relative; */
+  /* padding-left: 2em;
+  padding-right: 2em; */
+  padding: 2em;
+}
+
+.sec1menu {
+  width: 100%;
+  float: right;
+  text-align: right;
+  /* margin-top: 1em; */
+  /* margin-bottom: 5em; */
+}
+
+.bodymargin {
+  margin-left: 1.8em;
+  margin-right: 1.8em;
+}
+
+.sec1menu ul {
+  list-style-type: none;
+}
+
+.sec1menu li {
+  /* margin-top: 0.5em; */
+  margin-bottom: 0.8em;
+}
+
+.sec1menu a {
+  text-decoration: none;
+  color: white;
+  font-family: "europa";
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.sec1menu a:hover {
+  color: lightgray;
+}
+
+.listing {
+  margin-top: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+.posting {
+  margin-top: 2em;
+}
+.posting img {
+  width: 50%;
+}
+
+.posting p:nth-child(2) {
+  /* width: 50%; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+}
+
+.appposting {
+  margin-top: 3em;
+}
+
+.appposting img {
+  width: 50%;
+}
+
+.artposting {
+  margin-top: 3em;
+}
+
+.artposting img {
+  width: 33.333%;
+}
+
+.sec5 {
+  background-color: blue;
+  color: white !important;
+  width: 100% !important;
+  padding-top: 3em;
+  padding-bottom: 4em;
+  /* margin-top: 5em; */
+  /* padding-top: 2em; */
+  /* padding-bottom: 2em; */
+}
+
+.sec5 p {
+  text-align: center;
+  width: 100% !important;
+  color: white !important;
+
+}
+
+.sec5 a {
+  text-decoration: none;
+  color: white;
+}
+
+.sec4 a {
+  text-decoration: none;
+  color: black;
+}
+
+.sec1, .sec2, .sec3, .sec4 {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  /* background-color: lightgray; */
+}
+.sec3 {
+  /* padding-top: 2em;
+  padding-bottom: 2em; */
+  background-color: #F5F5F5;
+}
+
+.sec5 a:hover {
+  text-decoration: none;
+  color: lightgray;
+}
+
+#regulartext {
+  font-family: "europa";
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  margin-top: 1em;
+  color: black;
+  width: 50%;
+  /* width: 50%; */
+  /* margin-left: 2em; margin-right: 2em; */
+}
+
+#largetitle {
+  font-family: "europa";
+  font-weight: bold;
+  font-size: 3.5em;
+  color: #CCCCCC;
+}
