@@ -154,9 +154,10 @@
 
 /* HEADER */
 .header {
-  background-image: url("../assets/header_background/bg2.png");
+  background-image: url("../assets/header_background/background.png");
   background-size: cover;
   background-position: center;
+  /* background-position: calc(100%) calc(100% + 200px);  */
   padding: 2em;
 }
 
