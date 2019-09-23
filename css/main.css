@@ -71,6 +71,10 @@
   #largetitle {
     line-height: 1.1em !important;
   }
+
+  .header {
+    background-position: 80% 60% !important; 
+  }
 }
 
 
@@ -158,6 +162,7 @@
   background-size: cover;
   background-position: center;
   /* background-position: calc(100%) calc(100% + 200px);  */
+  background-position: 0% 45%; 
   padding: 2em;
 }
 
