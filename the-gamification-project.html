@@ -7,11 +7,41 @@
     <title>THE GAMIFICATION PROJECT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://use.typekit.net/dal7uoj.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/gamification.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Calistoga|Roboto&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/gamification.css">
+    
   </head>
 
   <body>
-  
+    <div class="background">
+        <div class="centerBox">
+            <div class="logo">
+            </div>
+            
+            <div class="mainContentBox">
+                <div class="safeArea">
+                    <h1 id="questionResultText">What enviroment are you considering implementing gamification?</h1>
+                    <div class="select">
+                        <select>
+                            <option selected disabled>Choose an option</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <p id="results">text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here!</p>
+                    <div class="buttons">
+                        <button style="align-self: left;" type="button">Back</button>
+                        <button style="align-self: right;" type="next">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </body>
 </html>
