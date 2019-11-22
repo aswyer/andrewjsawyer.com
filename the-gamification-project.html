@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
     <script src="js/gamification.js"></script>
+    
 
     <link href="https://fonts.googleapis.com/css?family=Calistoga|Roboto&display=swap" rel="stylesheet">
 
@@ -25,19 +27,16 @@
             
             <div class="mainContentBox">
                 <div class="safeArea">
-                    <h1 id="questionResultText">What enviroment are you considering implementing gamification?</h1>
+                    <h1 id="questionResultText">Question?</h1>
                     <div class="select">
-                        <select>
-                            <option selected disabled>Choose an option</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
+                        <select class="selectMenu">
+                            <option selected disabled>Choose an option:</option>
                         </select>
                     </div>
                     <p id="results">text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here! text results scroll here!</p>
                     <div class="buttons">
-                        <button style="align-self: left;" type="button">Back</button>
-                        <button style="align-self: right;" type="next">Next</button>
+                        <button id="backButton" type="button">Back</button>
+                        <button id="nextButton" type="button">Next</button>
                     </div>
                 </div>
             </div>
