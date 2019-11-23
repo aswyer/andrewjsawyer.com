@@ -151,7 +151,7 @@ function loadAllData() {
     var q1 = new Question(
         "",
         "q1",
-        "What enviroment are you considering implementing gamification?",
+        "In which enviroment are you considering implementing gamification?",
         [
             new QuestionOption("Workplace", "r1"), 
             new QuestionOption("Classroom", "q2"),
@@ -163,7 +163,7 @@ function loadAllData() {
     var q2 = new Question(
         "q1",
         "q2",
-        "Is the learning style based on?",
+        "What is the learning style based on?",
         [
             new QuestionOption("Memorization (key terms, concepts, theory)", "r2"), 
             new QuestionOption("Application Based (math, applying concepts, critical thinking)", "r3")
