@@ -52,13 +52,17 @@ body { margin:0; }
   margin-bottom: 1.2em;
 }
 
+#downloadLinkBlock {
+  padding-top: 2.2em;
+}
+
 #downloadLink {
   background-color: white;
   border-radius: 0.5em;
   border: none;
   color: black;
   padding: 1em 1.5em;
-  margin-top: 1.2em;
+  
   text-align: center;
   text-decoration: none;
 
