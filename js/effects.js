@@ -5,7 +5,7 @@ var width = 0;
 $(document).ready(function() {
     sizeUpdate();
 
-    console.log("Hi! My name is Andrew. You should hire me!");
+    console.log("Hi! My name is Andrew. You should hire me :) 470.226.7019");
 
     $( "body" ).mousemove(function( event ) {
         var yFactor = -1 * (event.pageY - height/2)

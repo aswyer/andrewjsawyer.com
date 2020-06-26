@@ -85,7 +85,8 @@ html {
 }
 
 .links li {
-  margin-bottom: 0.8em;
+  margin-right: 2em;
+  float: left;
 }
 
 .links a {
@@ -93,7 +94,7 @@ html {
   font-weight: 700;
   font-style: normal;
 
-  font-size: 1.5em;
+  font-size: 1.1em;
   color: white;
 
   -webkit-user-select: none; /* Safari */        
@@ -145,29 +146,6 @@ html {
   color: white;
 }
 
-@media (max-width: 320px) {
-  .space {
-    flex-basis: 10%;
-  }
-  .wordbox {
-    flex-basis: 90%;
-  }
-  #position {
-    font-size: 1em;
-  }
-  #name {
-    font-size: 3.5em;
-  }
-  #regulartext {
-    font-size: 1em;
-    padding-right: 2em;
-  }
-  .links li a {
-    font-size: 1em;
-  }
-}
-
-
 @media (min-width: 1025px) and (max-width: 1366px) {
   .space {
     flex-basis: 10%;
@@ -186,9 +164,11 @@ html {
     padding-right: 20em;
   }
   .links li a {
-    font-size: 1.5em;
+    font-size: 1.1em;
   }
 }
+
+
 
 @media (min-width: 835px) and (max-width: 1024px) {
   .space {
@@ -232,6 +212,14 @@ html {
   }
   .links li a {
     font-size: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .links li {
+    margin-right: 0em;
+    margin-bottom: 0.8em;
+    float: none;
   }
 }
 
@@ -299,5 +287,27 @@ html {
   }
   .links li a {
     font-size: 1.2em;
+  }
+}
+
+@media (max-width: 320px) {
+  .space {
+    flex-basis: 10%;
+  }
+  .wordbox {
+    flex-basis: 90%;
+  }
+  #position {
+    font-size: 1em;
+  }
+  #name {
+    font-size: 3.5em;
+  }
+  #regulartext {
+    font-size: 1em;
+    padding-right: 2em;
+  }
+  .links li a {
+    font-size: 1em;
   }
 }
