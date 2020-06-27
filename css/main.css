@@ -44,6 +44,9 @@ h2 {
 
 /* introSection */
 .introSection {
+  /* position: relative; */
+  color: white;
+
   height: 100vh;
   display: grid;
 
@@ -62,7 +65,7 @@ h2 {
   2fr;
 
   grid-template-columns: 
-  0.5fr 9fr 0.5fr;
+  1fr 8fr 1fr;
 
 }
 
@@ -96,6 +99,14 @@ h2 {
 
 #downArrowIcon > img {
   width: 2rem;
+}
+
+#renderView {
+  position: absolute;
+  height: 100vw;
+  height: 100vh;
+
+  z-index: -1;
 }
 
 
