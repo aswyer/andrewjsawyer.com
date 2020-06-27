@@ -1,25 +1,135 @@
 html {
   background-color: white;
 
-  cursor:url(../assets/cursor.svg) 12.02 12.02, auto;
+  /* cursor:url(../assets/cursor.svg) 12.02 12.02, auto; */
 
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+}
+
+@font-face {
+  font-family: Authentic90;
+  src: url(../assets/fonts/AUTHENTICSans-90.otf);
+  font-weight: 90;
+}
+
+@font-face {
+  font-family: Authentic130;
+  src: url(../assets/fonts/AUTHENTICSans-130.otf);
+  font-weight: 130;
+}
+
+@font-face {
+  font-family: Authentic150;
+  src: url(../assets/fonts/AUTHENTICSans-150.otf);
+  font-weight: 150;
+}
+
+/*Mobile*/
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  /* align-self: baseline; */
+}
+
+
+
+
+/* introSection */
+.introSection {
+  height: 100vh;
+  display: grid;
+
+  grid-template-areas: 
+  ". . ." 
+  ". name ." 
+  ". headline ."
+  ". downArrowIcon ." 
+  ". . .";
+
+  grid-template-rows: 
+  2fr
+  2fr /*name*/
+  4fr /*headline*/
+  2fr /*arrow*/
+  2fr;
+
+  grid-template-columns: 
+  0.5fr 9fr 0.5fr;
 
 }
 
-@media (max-width: 1025px) {
+#mainName {
+  grid-area: name;
 
-}
-@media (max-width: 835px) {
-
-}
-
-@media (max-width: 769px) {
-
+  font-family: Authentic150;
+  /* background-color: yellowgreen; */
 }
 
+#headline {
+  grid-area: headline;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family: Authentic130;
+  /* background-color: indianred; */
+}
+
+#downArrowIcon {
+  grid-area: downArrowIcon;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  /* background-color: green; */
+}
+
+#downArrowIcon > img {
+  width: 2rem;
+}
 
 
+
+
+
+
+
+
+@media (min-width: 480px) { /*Mobile-landscape (and larger)*/
+
+}
+
+@media (min-width: 768px) { /*Tablet-portrait (and larger))*/
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    /* align-self: baseline; */
+  }
+
+  .introSection {
+    grid-template-columns: 
+    2fr 6fr 2fr;
+  }
+}
+
+@media (min-width: 992px) { /*Tablet-landscape (and larger)*/
+
+}
+
+@media (min-width: 1200px) { /*Mobile-landscape (and larger)*/
+
+}
