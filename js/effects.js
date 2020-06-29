@@ -1,6 +1,6 @@
 import * as THREE from 'https://unpkg.com/three@0.118.3/build/three.module.js';
 
-class LineObject extends THREE.LineLoop {
+class LineObject extends THREE.LineLoop { //
 	acceleration = new THREE.Vector2();
 	velocity = new THREE.Vector2();
 	counter = 0;
@@ -64,14 +64,16 @@ function resizedWindow() {
 }
 
 function addChildElements() {
-	for (var i = 0; i < 500; i++) {
-		var radius = 5;
+	for (var i = 0; i < 25; i++) {
+		var radius = 5 + Math.random() * 50;
 		//Math.random() * 10 + 
 		var geometry = new THREE.CircleGeometry(radius, 30);
 		geometry.vertices.splice(0, 1);
 
-		var material = new THREE.LineBasicMaterial();
-		material.color = new THREE.Color(Math.random()*1,Math.random()*1,Math.random()*1);
+		var material = new THREE.MeshBasicMaterial();
+		material.color = new THREE.Color(0xffffff);
+		//LineBasicMaterial();
+		// material.color = new THREE.Color(Math.random()*1,Math.random()*1,Math.random()*1);
 
 		var circleObject = new LineObject(geometry, material);
 		//THREE.LineLoop(geometry, material);
@@ -113,9 +115,9 @@ function animate() {
 		// 	circle.counter += 1;
 		// }
 
-		const radius = Math.random() * 500 + 50;
+		const radius = 100 + 50;
 		const magnitude = 50;
-		const time = 1;
+		const time = 2;
 
 		var xDistance = (mouse.x - circle.position.x)
 		// // var xAltertedDistance = xDistance * altertedDistance(xDistance);
@@ -129,12 +131,14 @@ function animate() {
 			circle.acceleration.x = xDistance// * circle.acceleration.x;
 			circle.acceleration.y = yDistance
 		} else {
-			circle.acceleration.x = 0
-			circle.acceleration.y = 0
-			circle.velocity.x = circle.velocity.x/5
-			circle.velocity.y = circle.velocity.y/5
-			// circle.acceleration.x = (2*xDistance-(circle.velocity.x*time))///(Math.pow(time, 2))// + (Math.random() * 500 - 250);
-			// circle.acceleration.y = (2*yDistance-(circle.velocity.y))///(Math.pow(time, 2))// + (Math.random() * 500 - 250);
+			// circle.acceleration.x = 0
+			// circle.acceleration.y = 0
+			// circle.velocity.x = circle.velocity.x/1.5
+			// circle.velocity.y = circle.velocity.y/1.5
+
+			// circle.acceleration
+			circle.acceleration.x = (2*xDistance-(circle.velocity.x*time))/150///(Math.pow(time, 2))// + (Math.random() * 500 - 250);
+			circle.acceleration.y = (2*yDistance-(circle.velocity.y*time))/150///(Math.pow(time, 2))// + (Math.random() * 500 - 250);
 		}
 
 		
