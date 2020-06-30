@@ -1,7 +1,7 @@
 html {
   background-color: white;
 
-  cursor:url(../assets/cursorEmpty.svg) 6 6, auto;
+  cursor:url(../assets/cursor.svg) 6 6, auto;
 
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
@@ -45,7 +45,7 @@ h2 {
 /* introSection */
 .introSection {
   /* position: relative; */
-  color: white;
+  color: black;
 
   height: 100vh;
   display: grid;
@@ -110,7 +110,30 @@ h2 {
 }
 
 
+/* processVideoSection */
+.processVideoSection {
+  display: grid;
 
+  /* height: 50vh; */
+
+  grid-template-areas: 
+  ". processVideo .";
+ 
+  grid-template-rows: 
+  1fr;
+
+  grid-template-columns: 
+  1fr 8fr 1fr;
+}
+
+.processVideo {
+  grid-area: processVideo;
+  
+  border-radius: 3rem;
+
+  width: 100%;
+  
+}
 
 
 

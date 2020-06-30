@@ -16,12 +16,38 @@ var groupHeight;
 init();
 animate();
 
+// function changeMode(isDarkEnabled) {
+// 	const lightColor = 
+// 	const darkColor = new THREE.Color( 0x0C0D0D );
+
+// 	if (isDarkEnabled) {
+// 		scene.background = darkColor;
+
+// 		group.children.forEach(function (circle, index) {
+// 			circle.material.color = lightColor;
+// 		})
+
+// 		document.body.backgroundColor = "red"
+
+// 	} else {
+	
+// 		scene.background = new THREE.Color( 0xFFFFFF );;
+
+// 		group.children.forEach(function (circle, index) {
+// 			circle.material.color = darkColor;
+// 		})
+
+// 	}
+// }
+
 function init() {
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 
 	resizedWindow();
 
 	scene = new THREE.Scene();
+	scene.background = new THREE.Color( 0xFFFFFF );;
+
 	group = new THREE.Group();
 
 	scene.add(group);
@@ -48,25 +74,27 @@ function resizedWindow() {
 }
 
 function addChildElements() {
-	for (var i = 0; i < 50; i++) {
+	for (var i = 0; i < 25 + Math.random() * 25; i++) {
 		var radius = 5;
-		if (i < 25) {
+		if (i < 10) {
 			radius += Math.random() * 50
 		}
 		
-		
 		//geometry
-		var geometry = new THREE.CircleGeometry(radius, 30);
+		var geometry = new THREE.CircleGeometry(radius, 24); //3 + Math.random() * 5
 		geometry.vertices.splice(0, 1);
 
 		//material
 		var material = new THREE.LineBasicMaterial();
+		material.color = material.color = new THREE.Color( 0x000000 );
+		//new THREE.Color(Math.random(),Math.random(),Math.random()); 
 
 		//object
 		var circleObject = new CircleMesh(geometry, material);
 		
 		circleObject.position.x = Math.random() * groupWidth - groupWidth/2;
 		circleObject.position.y = Math.random() * groupHeight - groupHeight/2;
+		// circleObject.position.z = Math.random() * -100
 
 		group.add(circleObject);
 	}
@@ -81,6 +109,9 @@ function animate() {
 	requestAnimationFrame( animate );
 
 	const radius = 100;
+
+	// camera.position.x = -mouse.x//25
+	// camera.position.y = -mouse.y//25
 	
 	group.children.forEach(function (circle, index) {
 
@@ -90,12 +121,15 @@ function animate() {
 		if (xDistance < radius && xDistance > -radius && yDistance < radius && yDistance > -radius) {
 			circle.acceleration.x = xDistance
 			circle.acceleration.y = yDistance
+			
 		} else {
 			const magnitude = 10 + Math.random() * 50;
 
 			circle.acceleration.x = (xDistance-circle.velocity.x)/magnitude
 			circle.acceleration.y = (yDistance-circle.velocity.y)/magnitude
 		}
+		
+		circle.rotation.z += 0.01
 
 		updateVelocityAndPosition(circle);
 
