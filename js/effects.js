@@ -38,7 +38,6 @@ function init() {
 }
 
 function resizedWindow() {
-
 	groupHeight = window.innerHeight;
 	groupWidth = window.innerWidth;
 
@@ -46,13 +45,15 @@ function resizedWindow() {
 	camera.position.z = 1;
 
 	renderer.setSize(window.innerWidth, window.innerHeight);
-
-	console.log(groupHeight, groupWidth);
 }
 
 function addChildElements() {
 	for (var i = 0; i < 50; i++) {
-		var radius = 5 + Math.random() * 50;
+		var radius = 5;
+		if (i < 25) {
+			radius += Math.random() * 50
+		}
+		
 		
 		//geometry
 		var geometry = new THREE.CircleGeometry(radius, 30);
@@ -79,7 +80,7 @@ function mouseMoved(event) {
 function animate() {
 	requestAnimationFrame( animate );
 
-	const radius = 150;
+	const radius = 100;
 	
 	group.children.forEach(function (circle, index) {
 

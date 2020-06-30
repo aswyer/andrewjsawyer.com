@@ -1,7 +1,7 @@
 html {
   background-color: white;
 
-  /* cursor:url(../assets/cursor.svg) 12.02 12.02, auto; */
+  cursor:url(../assets/cursorEmpty.svg) 6 6, auto;
 
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
