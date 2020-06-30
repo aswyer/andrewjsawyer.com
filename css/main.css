@@ -1,7 +1,7 @@
 html {
   background-color: white;
 
-  cursor:url(../assets/cursor.svg) 6 6, auto;
+  cursor:url(../assets/cursor.svg) 12 12, auto;
 
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
@@ -87,6 +87,10 @@ h2 {
   /* background-color: indianred; */
 }
 
+#headlineLineBreak {
+  display: none;
+}
+
 #downArrowIcon {
   grid-area: downArrowIcon;
   
@@ -158,10 +162,16 @@ h2 {
     grid-template-columns: 
     2fr 6fr 2fr;
   }
+
+  #downArrowIcon {
+    justify-content: flex-end;
+  }
 }
 
 @media (min-width: 992px) { /*Tablet-landscape (and larger)*/
-
+  #headlineLineBreak {
+    display: inline;
+  }
 }
 
 @media (min-width: 1200px) { /*Mobile-landscape (and larger)*/

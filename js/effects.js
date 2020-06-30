@@ -81,7 +81,7 @@ function addChildElements() {
 		}
 		
 		//geometry
-		var geometry = new THREE.CircleGeometry(radius, 24); //3 + Math.random() * 5
+		var geometry = new THREE.CircleGeometry(radius, 3 + Math.random() * 5); //3 + Math.random() * 5     //24
 		geometry.vertices.splice(0, 1);
 
 		//material
@@ -101,8 +101,8 @@ function addChildElements() {
 }
 
 function mouseMoved(event) {
-	mouse.x = ((event.clientX/window.innerWidth)-0.5) * groupWidth;
-	mouse.y = -((event.clientY/window.innerHeight)-0.5) * groupHeight;
+	mouse.x = event.clientX - groupWidth/2
+	mouse.y = -(event.clientY- groupHeight/2) - document.documentElement.scrollTop;
 }
 
 function animate() {
@@ -121,7 +121,7 @@ function animate() {
 		if (xDistance < radius && xDistance > -radius && yDistance < radius && yDistance > -radius) {
 			circle.acceleration.x = xDistance
 			circle.acceleration.y = yDistance
-			
+
 		} else {
 			const magnitude = 10 + Math.random() * 50;
 
