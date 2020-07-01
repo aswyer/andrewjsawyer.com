@@ -59,7 +59,6 @@ function init() {
 	document.addEventListener("mousemove", mouseMoved);
 	
 	document.getElementById("renderView").appendChild( renderer.domElement );
-
 	renderer.render( scene, camera );
 }
 

@@ -29,6 +29,21 @@ html {
 
 /*Mobile*/
 
+.rlMargin {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.rlMarginIntroSection {
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.topSectionSpacing {
+  margin-top: 10vh;
+}
+
+
 h1 {
   font-size: 2rem;
   line-height: 2.5rem;
@@ -47,44 +62,31 @@ h2 {
   /* position: relative; */
   color: black;
 
-  height: 100vh;
+  height: 80vh;
   display: grid;
 
   grid-template-areas: 
-  ". . ." 
-  ". name ." 
-  ". headline ."
-  ". downArrowIcon ." 
-  ". . .";
+  "name" 
+  "headline"
+  "downArrowIcon";
 
   grid-template-rows: 
-  2fr
   2fr /*name*/
   4fr /*headline*/
-  2fr /*arrow*/
-  2fr;
+  2fr /*arrow*/;
 
   grid-template-columns: 
-  1fr 8fr 1fr;
-
+  1fr;
 }
 
 #mainName {
-  grid-area: name;
-
+  align-self: start;
   font-family: Authentic150;
-  /* background-color: yellowgreen; */
 }
 
 #headline {
-  grid-area: headline;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
+  align-self: center;
   font-family: Authentic130;
-  /* background-color: indianred; */
 }
 
 #headlineLineBreak {
@@ -92,13 +94,9 @@ h2 {
 }
 
 #downArrowIcon {
-  grid-area: downArrowIcon;
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  /* background-color: green; */
+  /* align-self: center;   */
+  align-self: end;
+  justify-self: center;
 }
 
 #downArrowIcon > img {
@@ -107,9 +105,10 @@ h2 {
 
 #renderView {
   position: absolute;
-  height: 100vw;
+  width: 100vw;
   height: 100vh;
-
+  left: 0%;
+  top: 0%;
   z-index: -1;
 }
 
@@ -117,21 +116,15 @@ h2 {
 /* processVideoSection */
 .processVideoSection {
   display: grid;
-
-  /* height: 50vh; */
-
-  grid-template-areas: 
-  ". processVideo .";
  
   grid-template-rows: 
   1fr;
 
   grid-template-columns: 
-  1fr 8fr 1fr;
+  8fr;
 }
 
-.processVideo {
-  grid-area: processVideo;
+#processVideo {
   
   border-radius: 3rem;
 
@@ -139,12 +132,53 @@ h2 {
   
 }
 
+/* keyInfoSection */
+.keyInfoSection {
+  display: grid;
+
+  /* grid-template-areas: 
+  "interests tools socials info"; */
+
+  grid-template-rows: 
+  1fr 1fr;
+
+  grid-template-columns: 1fr 1fr;
+
+
+}
+
+#interests {
+  /* align-self: center; */
+  justify-self: center;
+}
+
+#tools {
+  /* align-self: center; */
+  justify-self: center;
+}
+
+#socials {
+  /* align-self: center; */
+  justify-self: center;
+}
+
+#info {
+  /* align-self: center; */
+  justify-self: center;
+}
+
 
 
 
 
 @media (min-width: 480px) { /*Mobile-landscape (and larger)*/
+  .keyInfoSection {
+    grid-template-rows: 
+    1fr;
 
+    grid-template-columns: 
+    1fr 1fr 1fr 1fr;
+  }
 }
 
 @media (min-width: 768px) { /*Tablet-portrait (and larger))*/
@@ -158,13 +192,13 @@ h2 {
     /* align-self: baseline; */
   }
 
-  .introSection {
+  /* .introSection {
     grid-template-columns: 
     2fr 6fr 2fr;
-  }
+  } */
 
   #downArrowIcon {
-    justify-content: flex-end;
+    justify-self: end;
   }
 }
 
