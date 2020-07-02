@@ -34,7 +34,7 @@ html {
   margin-left: 10%;
 }
 
-.rlMarginIntroSection {
+.rlMarginLarge {
   margin-right: 15%;
   margin-left: 15%;
 }
@@ -47,11 +47,34 @@ html {
 h1 {
   font-size: 2rem;
   line-height: 2.5rem;
+  
+  font-family: Authentic130;
 }
 
 h2 {
   font-size: 1.5rem;
   /* align-self: baseline; */
+  font-family: Authentic150;
+}
+
+h3 {
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-family: Authentic90;
+}
+
+p {
+  font-size: 1em;
+  font-family: Authentic90;
+  line-height: 1.5em;
+}
+
+.keyInfoSection p {
+  color: #9B9B9B;
 }
 
 
@@ -81,12 +104,12 @@ h2 {
 
 #mainName {
   align-self: start;
-  font-family: Authentic150;
+  
 }
 
 #headline {
   align-self: center;
-  font-family: Authentic130;
+  
 }
 
 #headlineLineBreak {

@@ -12,6 +12,8 @@ var mouse = new THREE.Vector2();
 var groupWidth;
 var groupHeight;
 
+const radius = 100;
+
 //initial calls
 init();
 animate();
@@ -106,23 +108,21 @@ function mouseMoved(event) {
 
 function animate() {
 	requestAnimationFrame( animate );
-
-	const radius = 100;
-
-	// camera.position.x = -mouse.x//25
-	// camera.position.y = -mouse.y//25
 	
 	group.children.forEach(function (circle, index) {
 
 		var xDistance = (mouse.x - circle.position.x)
 		var yDistance = (mouse.y - circle.position.y)
 		
-		if (xDistance < radius && xDistance > -radius && yDistance < radius && yDistance > -radius) {
+		if (
+			xDistance < radius && xDistance > -radius && 
+			yDistance < radius && yDistance > -radius) 
+		{
 			circle.acceleration.x = xDistance
 			circle.acceleration.y = yDistance
 
 		} else {
-			const magnitude = 10 + Math.random() * 50;
+			const magnitude = 10 + Math.random() * (radius/2);
 
 			circle.acceleration.x = (xDistance-circle.velocity.x)/magnitude
 			circle.acceleration.y = (yDistance-circle.velocity.y)/magnitude
@@ -139,8 +139,7 @@ function animate() {
 
 function updateVelocityAndPosition(circle) {
 	circle.velocity.x += circle.acceleration.x;
-	circle.velocity.y += circle.acceleration.y;
-		
+	circle.velocity.y += circle.acceleration.y
 
 	circle.position.x += circle.velocity.x/60
 	circle.position.y += circle.velocity.y/60
