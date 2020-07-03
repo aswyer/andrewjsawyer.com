@@ -43,6 +43,8 @@ animate();
 // }
 
 function init() {
+	
+
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 
 	resizedWindow();
@@ -87,8 +89,8 @@ function addChildElements() {
 
 		//material
 		var material = new THREE.LineBasicMaterial();
-		material.color = material.color = new THREE.Color( 0x000000 );
-		//new THREE.Color(Math.random(),Math.random(),Math.random()); 
+		material.color = new THREE.Color( 0x000000 );
+		//new THREE.Color(Math.random(),Math.random(),Math.random());
 
 		//object
 		var circleObject = new CircleMesh(geometry, material);
@@ -102,12 +104,22 @@ function addChildElements() {
 }
 
 function mouseMoved(event) {
+	if (document.documentElement.scrollTop > window.innerHeight) {
+		return;
+	}
+
 	mouse.x = event.clientX - groupWidth/2
 	mouse.y = -(event.clientY- groupHeight/2) - document.documentElement.scrollTop;
 }
 
 function animate() {
 	requestAnimationFrame( animate );
+
+	if (document.documentElement.scrollTop > window.innerHeight) {
+		return;
+	}
+
+	
 	
 	group.children.forEach(function (circle, index) {
 
