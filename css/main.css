@@ -27,81 +27,72 @@ html {
   font-weight: 150;
 }
 
-/*Mobile*/
+/* ------------------------ */
+/* LAYOUT SIZE: all purpose */
 
+/* - SECTION: multiple */
 .rlMarginSmall {
   margin-right: 5%;
   margin-left: 5%;
 }
-
 .rlMargin {
   margin-right: 10%;
   margin-left: 10%;
 }
-
 .rlMarginLarge {
   margin-right: 15%;
   margin-left: 15%;
 }
 
-.tbIntroSectionSpacing {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-}
-
-.topSectionSpacingLarge {
-  margin-top: 20vh;
-}
+/* ------------------------ */
+/* LAYOUT SIZE: mobile */
 
 
+/* - SECTION: non-specific */
 h1 {
   font-size: 2rem;
   line-height: 2.5rem;
   
   font-family: Authentic130;
 }
-
 h2 {
   font-size: 1.5rem;
   /* align-self: baseline; */
   font-family: Authentic150;
 }
-
 h3 {
   font-size: 2rem;
   text-decoration: underline;
 
   font-family: Authentic90;
 }
-
 h4 {
   font-size: 1.2rem;
   font-family: Authentic90;
 }
-
 h5 {
   font-size: 1.2rem;
   font-family: Authentic150;
 }
-
-
-
+h6 {
+  font-size: 2rem;
+  font-family: Authentic90;
+}
 p {
   font-size: 1em;
   font-family: Authentic90;
   line-height: 1.5em;
 }
 
-.keyInfoSection p {
-  color: #9B9B9B;
+.topSectionSpacingLarge {
+  margin-top: 20vh;
 }
 
-.keyInfoSection h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+/* - SECTION: introSection */
+.tbIntroSectionSpacing {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
-
-/* introSection */
 .introSection {
   color: black;
 
@@ -121,30 +112,24 @@ p {
   grid-template-columns: 
   1fr;
 }
-
 #mainName {
   align-self: start;
 }
-
 #headline {
   align-self: center;
   
 }
-
 #headlineLineBreak {
   display: none;
 }
-
 #downArrowIcon {
   /* align-self: center;   */
   align-self: end;
   justify-self: center;
 }
-
-#downArrowIcon > img {
+#downArrowIcon img {
   width: 2rem;
 }
-
 #renderView {
   position: absolute;
   width: 100vw;
@@ -154,41 +139,7 @@ p {
   z-index: -1;
 }
 
-.ctaSection {
-  display: grid;
-
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fill, 1fr);
-}
-
-#cta {
-  grid-column: 1;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 3.5rem;
-}
-
-.ctaSection h6 {
-  color: #CECECE;
-}
-
-.ctaSection img {
-  height: 2.2em;
-  width: auto;
-}
-
-h6 {
-  font-size: 2rem;
-  font-family: Authentic90;
-}
-
-
-/* processVideoSection */
+/* - SECTION: processVideoSection */
 .processVideoSection {
   display: grid;
  
@@ -198,25 +149,12 @@ h6 {
   grid-template-columns: 
   8fr;
 }
-
-/* keyInfoSection */
-/* .keyInfoSection {
-  display: grid;
-
-  grid-template-rows: 
-  1fr 1fr;
-
-  grid-template-columns: 1fr 1fr;
+#processVideo {
+  width: 100%;
+  border-radius: 3rem;
 }
 
-#tools {
-  justify-self: center;
-}
-
-#info {
-  justify-self: center;
-} */
-
+/* - SECTION: keyInfoSection */
 .keyInfoSection {
   display: grid;
 
@@ -227,28 +165,30 @@ h6 {
   "interests tools"
   "socials info";
 }
-
 #interests {
   grid-area: interests;
 }
-
 #tools {
   grid-area: tools;
 }
-
 #socials {
   grid-area: socials;
 }
-
 #info {
   grid-area: info;
 }
-
 #tools, #info {
   justify-self: center;
 }
+.keyInfoSection p {
+  color: #9B9B9B;
+}
+.keyInfoSection h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
 
-/* projectSectionfrl */
+/* - SECTION: helper for featuredProjectSection & allProjectSection */
 .projectSection {
   display: grid;
 
@@ -258,22 +198,27 @@ h6 {
   "sectionTitle"
   "content";
 }
-
-.projectSection > h3 {
+.projectSection h3 {
   grid-area: sectionTitle;
   margin-bottom: 2rem;
   margin-right: 2rem;
   text-align: left;
   justify-self: left;
 }
-
-
-
 .projectSection h5 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.projectSection img {
+  width: 100%;
+  border-radius: 2rem;
+}    
+.projectSection p:nth-of-type(2) {
+  color: #9B9B9B;
+  margin-top: 1.5rem;
+}
 
+/* - SECTION: featuredProjectSection */
 .featuredProjectContent {
   grid-area: content;
 
@@ -283,17 +228,6 @@ h6 {
   grid-template-rows: repeat(auto-fill, 1fr);
   gap: 4rem 4rem;
 }
-
-.allProjectContent {
-  grid-area: content;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(auto-fill, 1fr);
-  gap: 2.5rem 2.5rem;
-}
-
 #full1 {
   grid-column: 1;
   grid-row: 1;
@@ -307,66 +241,77 @@ h6 {
   grid-row: 3;
 }
 
+/* - SECTION: allProjectSection  */
+.allProjectContent {
+  grid-area: content;
 
-img {
-  width: 100%;
-  border-radius: 2rem;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 2.5rem 2.5rem;
 }
 
-#processVideo {
-  width: 100%;
-  border-radius: 3rem;
+/* - SECTION: ctaSection */
+.ctaSection {
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, 1fr);
+}
+#cta {
+  grid-column: 1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 3.5rem;
+}
+.ctaSection h6 {
+  color: #CECECE;
+}
+.ctaSection img {
+  height: 2.2em;
+  width: auto;
 }
 
 
+/* ------------------------ */
+/* LAYOUT SIZE: full but compact */
+@media (min-width: 768px) {
 
-.projectSection p:nth-of-type(2) {
-    color: #9B9B9B;
-    margin-top: 1.5rem;
-}
-
-
-
-@media (min-width: 480px) { /*Mobile-landscape (and larger)*/
-  
-}
-
-@media (min-width: 768px) { /*Tablet-portrait (and larger))*/
+  /* - SECTION: non-specific */
   h1 {
     font-size: 2.5rem;
     line-height: 3rem;
   }
-  
   h2 {
     font-size: 1.5rem;
-    /* align-self: baseline; */
   }
 
-  
-
-  #downArrowIcon {
+  /* - SECTION: introSection */
+  #downArrowIcon { 
     justify-self: end;
   }
 
+  /* - SECTION: keyInfoSection */
   .keyInfoSection {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   
     grid-template-areas: 
     "interests tools socials info";
   }
-
   #interests, #tools, #socials, #info {
     justify-self: center;
   }
 
+  /* - SECTION: featuredProjectSection */
   .featuredProjectContent {
     grid-template-columns: 1fr 1fr;
   }
-
-  .allProjectContent {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
   #full1 {
     grid-column: 1 / span 2;
     grid-row: 1;
@@ -379,37 +324,31 @@ img {
     grid-column: 2;
     grid-row: 2;
   }
+
+  /* - SECTION: allProjectSection */
+  .allProjectContent {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
-@media (min-width: 992px) { /*Tablet-landscape (and larger)*/
-  
-  .projectSection {
-    grid-template-columns: 2fr 6fr;
+/* ------------------------ */
+/* LAYOUT SIZE: full and offset column */
+@media (min-width: 992px) {
 
-    grid-template-areas: 
-    "sectionTitle content";
-  }
-
-  .ctaSection {
-    grid-template-columns: 2fr 6fr 2fr;
-  }
-
-  #cta {
-    grid-column: 2;
-  }
-
-  .ctaSection img {
-    height: 2.7rem;
-  }
-
-  h6 {
-    font-size: 2.5rem;
-  }
-  
+  /* - SECTION: non-specific */
   h3 {
     font-size: 1.5rem;
   }
+  h6 {
+    font-size: 2.5rem;
+  }
 
+  /* - SECTION: introSection */
+  #headlineLineBreak {
+    display: inline;
+  }
+
+  /* - SECTION: keyInfoSection */
   .keyInfoSection {
     grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr;
   
@@ -417,13 +356,36 @@ img {
     "interests tools socials info";
   }
 
-  #headlineLineBreak {
-    display: inline;
+  /* - SECTION: helper for featuredProjectSection & allProjectSection */
+  .projectSection {
+    grid-template-columns: 2fr 6fr;
+
+    grid-template-areas: 
+    "sectionTitle content";
   }
+
+  /* - SECTION: ctaSection */
+  .ctaSection {
+    grid-template-columns: 2fr 6fr 2fr;
+  }
+  #cta {
+    grid-column: 2;
+  }
+  .ctaSection img {
+    height: 2.7rem;
+  }
+
 }
 
-@media (min-width: 1200px) { /*EXTRA */
+/* ------------------------ */
+/* LAYOUT SIZE: full and centered column */
+@media (min-width: 1200px) {
+  /* - SECTION: non-specific */
+  h6 {
+    font-size: 3rem;
+  }
 
+  /* - SECTION: keyInfoSection */
   .keyInfoSection {
     grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 1.5fr 2fr;
   
@@ -431,19 +393,17 @@ img {
     ". interests tools socials info .";
   }
 
-  .ctaSection img {
-    height: 3.2rem;
-  }
-
-  h6 {
-    font-size: 3rem;
-  }
-
-
+  /* - SECTION: helper for featuredProjectSection & allProjectSection */
   .projectSection {
     grid-template-columns: 2fr 6fr 2fr;
 
     grid-template-areas: 
     "sectionTitle content .";
+  }
+
+  /* - SECTION: ctaSection */
+  .ctaSection img {
+    height: 3.2rem;
+    
   }
 }
