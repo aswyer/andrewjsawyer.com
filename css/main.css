@@ -30,7 +30,7 @@ html {
 /* ------------------------ */
 /* LAYOUT SIZE: all purpose */
 
-/* - SECTION: multiple */
+/* - SECTION: non-specific */
 .rlMarginSmall {
   margin-right: 5%;
   margin-left: 5%;
@@ -99,31 +99,25 @@ p {
   height: 80vh;
   display: grid;
 
-  grid-template-areas: 
-  "name" 
-  "headline"
-  "downArrowIcon";
-
   grid-template-rows: 
-  2fr /*name*/
-  4fr /*headline*/
-  2fr /*arrow*/;
+  2fr
+  4fr
+  2fr;
 
   grid-template-columns: 
   1fr;
 }
-#mainName {
+
+.mainName {
   align-self: start;
 }
-#headline {
+.headline {
   align-self: center;
-  
 }
 #headlineLineBreak {
   display: none;
 }
-#downArrowIcon {
-  /* align-self: center;   */
+.downArrowIcon {
   align-self: end;
   justify-self: center;
 }
@@ -149,7 +143,7 @@ p {
   grid-template-columns: 
   8fr;
 }
-#processVideo {
+.processVideo {
   width: 100%;
   border-radius: 3rem;
 }
@@ -160,26 +154,12 @@ p {
 
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+}
 
-  grid-template-areas: 
-  "interests tools"
-  "socials info";
-}
-#interests {
-  grid-area: interests;
-}
-#tools {
-  grid-area: tools;
-}
-#socials {
-  grid-area: socials;
-}
-#info {
-  grid-area: info;
-}
 #tools, #info {
   justify-self: center;
 }
+
 .keyInfoSection p {
   color: #9B9B9B;
 }
@@ -193,13 +173,9 @@ p {
   display: grid;
 
   grid-template-columns: 1fr;
-
-  grid-template-areas: 
-  "sectionTitle"
-  "content";
 }
 .projectSection h3 {
-  grid-area: sectionTitle;
+
   margin-bottom: 2rem;
   margin-right: 2rem;
   text-align: left;
@@ -220,36 +196,20 @@ p {
 
 /* - SECTION: featuredProjectSection */
 .featuredProjectContent {
-  grid-area: content;
 
   display: grid;
 
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fill, 1fr);
   gap: 4rem 4rem;
-}
-#full1 {
-  grid-column: 1;
-  grid-row: 1;
-}
-#half1 {
-  grid-column: 1;
-  grid-row: 2;
-}
-#half2 {
-  grid-column: 1;
-  grid-row: 3;
 }
 
 /* - SECTION: allProjectSection  */
 .allProjectContent {
-  grid-area: content;
 
   display: grid;
 
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(auto-fill, 1fr);
-  gap: 2.5rem 2.5rem;
+  gap: 1rem 1rem;
 }
 
 /* - SECTION: ctaSection */
@@ -257,9 +217,8 @@ p {
   display: grid;
 
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fill, 1fr);
 }
-#cta {
+.cta {
   grid-column: 1;
 
   display: flex;
@@ -299,11 +258,11 @@ p {
 
   /* - SECTION: keyInfoSection */
   .keyInfoSection {
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-  
-    grid-template-areas: 
-    "interests tools socials info";
   }
+
+  
   #interests, #tools, #socials, #info {
     justify-self: center;
   }
@@ -312,17 +271,9 @@ p {
   .featuredProjectContent {
     grid-template-columns: 1fr 1fr;
   }
-  #full1 {
+
+  .featuredProjectContent :nth-child(3n + 1) {
     grid-column: 1 / span 2;
-    grid-row: 1;
-  }
-  #half1 {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  #half2 {
-    grid-column: 2;
-    grid-row: 2;
   }
 
   /* - SECTION: allProjectSection */
@@ -349,26 +300,20 @@ p {
   }
 
   /* - SECTION: keyInfoSection */
-  .keyInfoSection {
-    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr;
-  
-    grid-template-areas: 
-    "interests tools socials info";
-  }
+  /* .keyInfoSection {
+    grid-template-rows: 1fr;
+  } */
 
   /* - SECTION: helper for featuredProjectSection & allProjectSection */
   .projectSection {
     grid-template-columns: 2fr 6fr;
-
-    grid-template-areas: 
-    "sectionTitle content";
   }
 
   /* - SECTION: ctaSection */
   .ctaSection {
     grid-template-columns: 2fr 6fr 2fr;
   }
-  #cta {
+  .cta {
     grid-column: 2;
   }
   .ctaSection img {
@@ -385,21 +330,25 @@ p {
     font-size: 3rem;
   }
 
-  /* - SECTION: keyInfoSection */
+  /* - SECTION: key info section */
   .keyInfoSection {
     grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 1.5fr 2fr;
-  
-    grid-template-areas: 
-    ". interests tools socials info .";
+  }
+  .keyInfoSection :nth-child(1) {
+    grid-column: 2;
   }
 
   /* - SECTION: helper for featuredProjectSection & allProjectSection */
   .projectSection {
     grid-template-columns: 2fr 6fr 2fr;
-
-    grid-template-areas: 
-    "sectionTitle content .";
   }
+  .projectSection h3 {
+    grid-column: 1;
+  }
+  .projectSection > div {
+    grid-column: 2 / span 1;
+  }
+
 
   /* - SECTION: ctaSection */
   .ctaSection img {
