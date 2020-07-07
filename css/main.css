@@ -1,7 +1,7 @@
 html {
   background-color: white;
 
-  cursor:url(../assets/cursor.svg) 12 12, auto;
+  cursor:url(../assets/cursor.svg) 6 6, auto;
 
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
@@ -65,6 +65,9 @@ a {
   text-decoration: none;
   color: var(--contentColor);
 }
+a :hover {
+  cursor:url(../assets/linkCursor.svg) 17.5 23, auto;
+}
 svg {
   fill: var(--contentColor);
 }
@@ -89,7 +92,7 @@ h3 {
   font-size: 2rem;
   text-decoration: underline;
 
-  text-underline-offset: 0.75em;
+  text-underline-offset: 0.75rem;
 
   font-family: Authentic90;
 }
