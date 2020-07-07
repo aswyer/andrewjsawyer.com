@@ -27,6 +27,7 @@ html {
   font-weight: 150;
 }
 
+
 /* ------------------------ */
 /* LAYOUT SIZE: all purpose */
 
@@ -42,6 +43,30 @@ html {
 .rlMarginLarge {
   margin-right: 15%;
   margin-left: 15%;
+}
+
+:root {
+  --contentColor: rgb(0, 0, 0);
+  --backgroundColor: rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark) {   
+  :root {
+    --contentColor: rgb(255, 255, 255);
+    /* --backgroundColor: rgb(9, 15, 17); */
+    --backgroundColor: rgb(0, 0, 0);
+  }
+}
+html {
+  color: var(--contentColor);
+  background-color: var(--backgroundColor);
+}
+a {
+  text-decoration: none;
+  color: var(--contentColor);
+}
+svg {
+  fill: var(--contentColor);
 }
 
 /* ------------------------ */
@@ -63,6 +88,8 @@ h2 {
 h3 {
   font-size: 2rem;
   text-decoration: underline;
+
+  text-underline-offset: 0.75em;
 
   font-family: Authentic90;
 }
@@ -94,8 +121,6 @@ p {
   margin-bottom: 10vh;
 }
 .introSection {
-  color: black;
-
   height: 80vh;
   display: grid;
 
@@ -120,10 +145,10 @@ p {
 .downArrowIcon {
   align-self: end;
   justify-self: center;
+  width: 2rem;  
 }
-#downArrowIcon img {
-  width: 2rem;
-}
+
+
 #renderView {
   position: absolute;
   width: 100vw;
@@ -155,7 +180,6 @@ p {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
 }
-
 #tools, #info {
   justify-self: center;
 }
@@ -215,10 +239,10 @@ p {
 /* - SECTION: ctaSection */
 .ctaSection {
   display: grid;
-
   grid-template-columns: 1fr;
 }
-.cta {
+
+.cta a {
   grid-column: 1;
 
   display: flex;
@@ -229,10 +253,7 @@ p {
 
   margin-bottom: 3.5rem;
 }
-.ctaSection h6 {
-  color: #CECECE;
-}
-.ctaSection img {
+.ctaSection svg {
   height: 2.2em;
   width: auto;
 }

@@ -14,46 +14,21 @@ var groupHeight;
 
 const radius = 100;
 
+var contentColor;
+var backgroundColor;
+
 //initial calls
 init();
 animate();
 
-// function changeMode(isDarkEnabled) {
-// 	const lightColor = 
-// 	const darkColor = new THREE.Color( 0x0C0D0D );
-
-// 	if (isDarkEnabled) {
-// 		scene.background = darkColor;
-
-// 		group.children.forEach(function (circle, index) {
-// 			circle.material.color = lightColor;
-// 		})
-
-// 		document.body.backgroundColor = "red"
-
-// 	} else {
-	
-// 		scene.background = new THREE.Color( 0xFFFFFF );;
-
-// 		group.children.forEach(function (circle, index) {
-// 			circle.material.color = darkColor;
-// 		})
-
-// 	}
-// }
-
 function init() {
-	
-
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 
 	resizedWindow();
+	mouse.x = (groupWidth/4);
 
 	scene = new THREE.Scene();
-	scene.background = new THREE.Color( 0xFFFFFF );;
-
 	group = new THREE.Group();
-
 	scene.add(group);
 
 	addChildElements();
@@ -64,6 +39,28 @@ function init() {
 	
 	document.getElementById("renderView").appendChild( renderer.domElement );
 	renderer.render( scene, camera );
+
+	//color calls
+	updateColorVariables();
+	window.matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', event => {
+		updateColorVariables();
+	})
+
+	console.log("Hi! I'd love to chat about who you are, what you're making, and why you do it. Text me: 470.226.7019");
+}
+
+function updateColorVariables() {
+	var tempContent = getComputedStyle(document.documentElement).getPropertyValue('--contentColor').substring(1);
+	var tempBackground = getComputedStyle(document.documentElement).getPropertyValue('--backgroundColor').substring(1);
+
+	contentColor = new THREE.Color(tempContent);
+	backgroundColor = new THREE.Color(tempBackground);
+
+	scene.background = backgroundColor;
+	group.children.forEach(function (circle, index) {
+		circle.material.color = contentColor;
+	})
 }
 
 function resizedWindow() {
@@ -89,7 +86,6 @@ function addChildElements() {
 
 		//material
 		var material = new THREE.LineBasicMaterial();
-		material.color = new THREE.Color( 0x000000 );
 		//new THREE.Color(Math.random(),Math.random(),Math.random());
 
 		//object
@@ -97,7 +93,6 @@ function addChildElements() {
 		
 		circleObject.position.x = Math.random() * groupWidth - groupWidth/2;
 		circleObject.position.y = Math.random() * groupHeight - groupHeight/2;
-		// circleObject.position.z = Math.random() * -100
 
 		group.add(circleObject);
 	}
@@ -118,8 +113,6 @@ function animate() {
 	if (document.documentElement.scrollTop > window.innerHeight) {
 		return;
 	}
-
-	
 	
 	group.children.forEach(function (circle, index) {
 
