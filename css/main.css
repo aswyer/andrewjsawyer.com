@@ -173,7 +173,7 @@ p {
 }
 .processVideo {
   width: 100%;
-  border-radius: 3rem;
+  border-radius: 2rem;
 }
 
 /* - SECTION: keyInfoSection */
@@ -214,7 +214,7 @@ p {
 }
 .projectSection img {
   width: 100%;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }    
 .projectSection p:nth-of-type(2) {
   color: #9B9B9B;
@@ -350,6 +350,10 @@ p {
 /* LAYOUT SIZE: full and centered column */
 @media (min-width: 1200px) {
   /* - SECTION: non-specific */
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
   h6 {
     font-size: 3rem;
   }
@@ -378,5 +382,16 @@ p {
   .ctaSection img {
     height: 3.2rem;
     
+  }
+}
+
+
+/* ------------------------ */
+/* LAYOUT SIZE: extra largec */
+@media (min-width: 1800px) {
+  /* - SECTION: non-specific */
+  h1 {
+    font-size: 4.5rem;
+    line-height: 5rem;
   }
 }
