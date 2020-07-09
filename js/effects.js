@@ -81,12 +81,11 @@ function addChildElements() {
 		}
 		
 		//geometry
-		var geometry = new THREE.CircleGeometry(radius, 3 + Math.random() * 5); //3 + Math.random() * 5     //24
+		var geometry = new THREE.CircleGeometry(radius, 3 + Math.random() * 5);
 		geometry.vertices.splice(0, 1);
 
 		//material
 		var material = new THREE.LineBasicMaterial();
-		//new THREE.Color(Math.random(),Math.random(),Math.random());
 
 		//object
 		var circleObject = new CircleMesh(geometry, material);
@@ -123,8 +122,8 @@ function animate() {
 			xDistance < radius && xDistance > -radius && 
 			yDistance < radius && yDistance > -radius) 
 		{
-			circle.acceleration.x = xDistance
-			circle.acceleration.y = yDistance
+			circle.acceleration.x = xDistance*1.2
+			circle.acceleration.y = yDistance*1.2
 
 		} else {
 			const magnitude = 10 + Math.random() * (radius/2);
@@ -149,46 +148,3 @@ function updateVelocityAndPosition(circle) {
 	circle.position.x += circle.velocity.x/60
 	circle.position.y += circle.velocity.y/60
 }
-
-// var factor = 2.5;
-
-// var height = 0;
-// var width = 0;
-
-// $(document).ready(function() {
-//     sizeUpdate();
-
-//     console.log("Hi! My name is Andrew. You should hire me :) 470.226.7019");
-
-//     $( "body" ).mousemove(function( event ) {
-//         var yFactor = -1 * (event.pageY - height/2)
-//         var xFactor =  -1 * (event.pageX - width/2)
-
-//         var movementStrength = (((xFactor*xFactor)/width+(yFactor*yFactor)/height)/36) * factor
-
-//         $("#bgImg").css("transform", "rotate3d(" + xFactor + ", " + yFactor + ", 0, " + movementStrength + "deg) ");
-//     });
-
-//     $( "body" ).mouseleave(function() {
-//         $("#bgImg").addClass("animate").delay(500).queue(function(next) {
-//             $(this).removeClass("animate");
-//             $("#bgImg").css("transform", "rotate(0)");
-//             next();
-//         });
-//       });
-
-//     $( window ).resize(function() {
-//         sizeUpdate();
-//     });
-// });
-
-// function sizeUpdate() {
-//     height = $(window).height();
-//     width = $(window).width();
-
-//     if (width > 1920) {
-//         factor = 1;
-//     } else if (width > 3840) {
-//         factor = 0.5;
-//     }
-// }
