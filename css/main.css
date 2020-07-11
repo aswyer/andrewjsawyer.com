@@ -66,10 +66,7 @@ a {
   text-decoration: none;
   color: var(--contentColor);
 }
-a :hover {
-  /* cursor:url(../assets/linkCursor.svg) 11 11, auto; */
-}
-.downArrowIcon svg {
+svg {
   fill: var(--contentColor);
 }
 
