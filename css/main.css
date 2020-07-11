@@ -28,6 +28,7 @@ html {
 }
 
 
+
 /* ------------------------ */
 /* LAYOUT SIZE: all purpose */
 
@@ -66,7 +67,7 @@ a {
   color: var(--contentColor);
 }
 a :hover {
-  cursor:url(../assets/linkCursor.svg) 11 11, auto;
+  /* cursor:url(../assets/linkCursor.svg) 11 11, auto; */
 }
 .downArrowIcon svg {
   fill: var(--contentColor);
@@ -133,6 +134,8 @@ p {
 
   grid-template-columns: 
   1fr;
+
+  /* cursor:url(../assets/cursor.svg) 5 5, auto; */
 }
 
 .mainName {
