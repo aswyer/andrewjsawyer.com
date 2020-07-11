@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12"><defs><style>.a{clip-path:url(#b);}.b{stroke:#fff;}.c{stroke:none;}.d{fill:none;}</style><clipPath id="b"><rect width="12" height="12"/></clipPath></defs><g id="a" class="a"><g class="b" transform="translate(1 1)"><circle class="c" cx="5" cy="5" r="5"/><circle class="d" cx="5" cy="5" r="5.5"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+  <g id="Ellipse_2" data-name="Ellipse 2" stroke="#fff" stroke-width="1">
+    <circle cx="5" cy="5" r="5" stroke="none"/>
+    <circle cx="5" cy="5" r="4.5" fill="none"/>
+  </g>
+</svg>
