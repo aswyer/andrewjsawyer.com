@@ -66,6 +66,7 @@ a {
   text-decoration: none;
   color: var(--contentColor);
 }
+
 svg {
   fill: var(--contentColor);
 }
@@ -233,7 +234,6 @@ p {
 
 /* - SECTION: allProjectSection  */
 .allProjectContent {
-
   display: grid;
 
   grid-template-columns: 1fr 1fr;
