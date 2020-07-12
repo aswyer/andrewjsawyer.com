@@ -62,6 +62,7 @@ html {
   color: var(--contentColor);
   background-color: var(--backgroundColor);
 }
+
 a {
   text-decoration: none;
   color: var(--contentColor);
@@ -118,11 +119,14 @@ p {
 
 /* - SECTION: introSection */
 .tbIntroSectionSpacing {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  /* margin-top: 10vh; */
+  /* margin-bottom: 10vh; */
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 .introSection {
-  height: 80vh;
+  height: 100vh;
+  height: -webkit-fill-available;
   display: grid;
 
   grid-template-rows: 
