@@ -47,17 +47,17 @@ html {
 }
 
 :root {
-  --contentColor: rgb(0, 0, 0);
-  --backgroundColor: rgb(255, 255, 255);
+  --contentColor: rgb(255, 255, 255);
+  --backgroundColor: rgb(0, 0, 0);
 }
 
-@media (prefers-color-scheme: dark) {   
+/* @media (prefers-color-scheme: dark) {   
   :root {
     --contentColor: rgb(255, 255, 255);
-    /* --backgroundColor: rgb(9, 15, 17); */
     --backgroundColor: rgb(0, 0, 0);
   }
-}
+} */
+
 html {
   color: var(--contentColor);
   background-color: var(--backgroundColor);

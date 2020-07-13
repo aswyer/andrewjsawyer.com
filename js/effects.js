@@ -42,10 +42,10 @@ function init() {
 
 	//color calls
 	updateColorVariables();
-	window.matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', event => {
-		updateColorVariables();
-	})
+	// window.matchMedia('(prefers-color-scheme: dark)')
+    //   .addEventListener('change', event => {
+	// 	updateColorVariables();
+	// })
 
 	console.log("Hi! I'd love to chat about who you are, what you're making, and why you do it. Text me: 470.226.7019");
 }
