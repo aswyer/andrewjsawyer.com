@@ -127,8 +127,8 @@ p {
   padding-bottom: 10vh;
 }
 .introSection {
+  height: -webkit-fill-available;
   height: 80vh;
-  /* height: -webkit-fill-available; */
   display: grid;
 
   grid-template-rows: 
@@ -138,8 +138,6 @@ p {
 
   grid-template-columns: 
   1fr;
-
-  /* cursor:url(../assets/cursor.svg) 5 5, auto; */
 }
 
 .mainName {
