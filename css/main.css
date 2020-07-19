@@ -125,8 +125,8 @@ p {
   padding-bottom: 10vh;
 }
 .introSection {
-  height: 100vh;
-  height: -webkit-fill-available;
+  height: 80vh;
+  /* height: -webkit-fill-available; */
   display: grid;
 
   grid-template-rows: 
