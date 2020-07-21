@@ -48,11 +48,6 @@ function init() {
 	// })
 
 	console.log("Hi! I'd love to chat about who you are, what you're making, and why you do it. Text me: 470.226.7019");
-
-	var introSection = document.getElementsByClassName("introSection")[0];
-	introSection.style.height = window.innerHeight*0.8+"px";
-	introSection.style.paddingTop = window.innerHeight*0.1+"px";
-	introSection.style.paddingBottom = window.innerHeight*0.1+"px";
 }
 
 function updateColorVariables() {
@@ -76,6 +71,11 @@ function resizedWindow() {
 	camera.position.z = 1;
 
 	renderer.setSize(window.innerWidth, window.innerHeight);
+	
+	var introSection = document.getElementsByClassName("introSection")[0];
+	introSection.style.height = window.innerHeight*0.8+"px";
+	introSection.style.paddingTop = window.innerHeight*0.1+"px";
+	introSection.style.paddingBottom = window.innerHeight*0.1+"px";
 }
 
 function addChildElements() {
