@@ -82,7 +82,7 @@ function addChildElements() {
 	for (var i = 0; i < 25 + Math.random() * 25; i++) {
 		var radius = 5;
 		if (i < 10) {
-			radius += Math.random() * 50
+			radius += Math.random() * 50;
 		}
 		
 		//geometry
@@ -107,7 +107,7 @@ function mouseMoved(event) {
 		return;
 	}
 
-	mouse.x = event.clientX - groupWidth/2
+	mouse.x = event.clientX - groupWidth/2;
 	mouse.y = -(event.clientY- groupHeight/2) - document.documentElement.scrollTop;
 }
 
@@ -120,24 +120,24 @@ function animate() {
 	
 	group.children.forEach(function (circle, index) {
 
-		var xDistance = (mouse.x - circle.position.x)
-		var yDistance = (mouse.y - circle.position.y)
+		var xDistance = (mouse.x - circle.position.x);
+		var yDistance = (mouse.y - circle.position.y);
 		
 		if (
 			xDistance < radius && xDistance > -radius && 
 			yDistance < radius && yDistance > -radius) 
 		{
-			circle.acceleration.x = xDistance*1.2
-			circle.acceleration.y = yDistance*1.2
+			circle.acceleration.x = xDistance*1.2;
+			circle.acceleration.y = yDistance*1.2;
 
 		} else {
 			const magnitude = 10 + Math.random() * (radius/2);
 
-			circle.acceleration.x = (xDistance-circle.velocity.x)/magnitude
-			circle.acceleration.y = (yDistance-circle.velocity.y)/magnitude
+			circle.acceleration.x = (xDistance-circle.velocity.x)/magnitude;
+			circle.acceleration.y = (yDistance-circle.velocity.y)/magnitude;
 		}
 		
-		circle.rotation.z += 0.01
+		circle.rotation.z += 0.01;
 
 		updateVelocityAndPosition(circle);
 
@@ -148,8 +148,8 @@ function animate() {
 
 function updateVelocityAndPosition(circle) {
 	circle.velocity.x += circle.acceleration.x;
-	circle.velocity.y += circle.acceleration.y
+	circle.velocity.y += circle.acceleration.y;
 
-	circle.position.x += circle.velocity.x/60
-	circle.position.y += circle.velocity.y/60
+	circle.position.x += circle.velocity.x/60;
+	circle.position.y += circle.velocity.y/60;
 }
