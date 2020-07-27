@@ -1,9 +1,18 @@
 import * as THREE from 'https://unpkg.com/three@0.118.3/build/three.module.js';
 
 class CircleMesh extends THREE.LineLoop { //THREE.Mesh
-	constructor() {
-		acceleration = new THREE.Vector2();
-		velocity = new THREE.Vector2();
+	constructor(geometry, material) {
+		super(geometry, material);
+		this._acceleration = new THREE.Vector2();
+		this._velocity = new THREE.Vector2();
+	}
+
+	get acceleration() {
+		return this._acceleration;
+	}
+
+	get velocity() {
+		return this._velocity;
 	}
 }
 
