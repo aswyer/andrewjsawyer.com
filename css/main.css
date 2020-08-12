@@ -270,6 +270,10 @@ p {
 /* ------------------------ */
 /* LAYOUT SIZE: full but compact */
 @media (min-width: 768px) {
+  .rlMarginLarge {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
 
   /* - SECTION: non-specific */
   h1 {
