@@ -124,7 +124,7 @@ function mouseMoved(event) {
 }
 
 function animate() {
-	requestAnimationFrame( animate );
+	
 
 	if (document.documentElement.scrollTop > window.innerHeight) {
 		return;
@@ -148,7 +148,7 @@ function animate() {
 			circle.acceleration.x = (xDistance-circle.velocity.x)/magnitude;
 			circle.acceleration.y = (yDistance-circle.velocity.y)/magnitude;
 		}
-		
+
 		circle.rotation.z += 0.01;
 
 		updateVelocityAndPosition(circle);
@@ -156,6 +156,7 @@ function animate() {
 	})
 
 	renderer.render( scene, camera );
+	requestAnimationFrame( animate );
 }
 
 function updateVelocityAndPosition(circle) {
