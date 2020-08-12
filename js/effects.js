@@ -81,6 +81,7 @@ function resizedWindow() {
 	camera = new THREE.OrthographicCamera(-groupWidth/2, groupWidth/2, groupHeight/2, -groupHeight/2, 0.01, 1000);
 	camera.position.z = 1;
 
+	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	
 	var introSection = document.getElementsByClassName("introSection")[0];
