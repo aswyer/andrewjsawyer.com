@@ -124,7 +124,7 @@ function mouseMoved(event) {
 }
 
 function animate() {
-	
+	requestAnimationFrame( animate );
 
 	if (document.documentElement.scrollTop > window.innerHeight) {
 		return;
@@ -156,7 +156,6 @@ function animate() {
 	})
 
 	renderer.render( scene, camera );
-	requestAnimationFrame( animate );
 }
 
 function updateVelocityAndPosition(circle) {
