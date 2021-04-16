@@ -1,20 +1,24 @@
-let r, g, b;
+let intensity = 0.8;
+
 let mic, fft;
 let title, subtitleL, subtitleR;
-
 let startButton;
+
+let radius;
 
 let hasAudio = false;
 
-let radius = 900;
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
-  angleMode(DEGREES);
   
+  angleMode(DEGREES);
   textAlign(LEFT, BASELINE);
 
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+
+  radius = windowHeight * intensity;
 
   title = createP("Onebyone*"); 
   title.style('font-size', '10em');
@@ -33,16 +37,17 @@ function setup() {
 }
 
 function startAudio() {
-  //for mic
+  //mic input
   mic = new p5.AudioIn();
   mic.start();
   fft = new p5.FFT();
   fft.setInput(mic);
 
+  //resume 
   getAudioContext().resume();
 
+  //remove button and enable drawing
   startButton.remove();
-
   hasAudio = true;
 }
 
@@ -51,14 +56,10 @@ function draw() {
 
   if(!hasAudio) { return; }
 
+  //DRAW SPECTRUM
   let spectrum = fft.analyze();
-  noFill();
-  stroke(255);
-  strokeWeight(2);
-
   beginShape();
-
-  for(i = 0; i<spectrum.length*0.3; i+=1) {
+  for(i = 0; i < spectrum.length*0.3; i+=1) {
 
     let angle = map(i, 0, spectrum.length*0.3, 180, 360);
 
@@ -69,9 +70,9 @@ function draw() {
 
     vertex(x + windowWidth/2, y + windowHeight);
   }
-
   endShape();
 
+  //ENERGY
   let bass = fft.getEnergy("bass");
   // let lowMid = fft.getEnergy("lowMid");
   let mid = fft.getEnergy("mid");
@@ -79,16 +80,16 @@ function draw() {
   // let treble = fft.getEnergy("treble");
 
 
-  let bassNormalized = map(bass, 0, 255, 0 ,windowHeight);
+  //MAP
   let midNormalized = map(mid, 0, 255, 100 ,900);
-  let highMidNormalized = map(highMid, 0, 255, 0 ,windowHeight);
-  // let highMidNormalized = map(highMid, 0, 255, 0 ,35);
-  // let slant = map(highMid, 0, 255, 12 ,0);
+
+  let bassNormalized = map(bass, 0, 255, 0 ,windowHeight*intensity);
+  let highMidNormalized = map(highMid, 0, 255, 0 ,windowHeight*intensity);
 
 
+  //APPLY
   title.elt.style['font-variation-settings'] = `"wght" ${midNormalized}`;
-  //-webkit-text-stroke-width: 1px;
-  title.elt.style['webkit-text-stroke-width'] = `${midNormalized}px`;
+
   subtitleL.position(windowWidth-240, windowHeight-125-highMidNormalized);
   subtitleR.position(windowWidth-145, windowHeight-125-bassNormalized);
 }
