@@ -52,7 +52,9 @@ function startAudio() {
 }
 
 function draw() {
-  background(0); //'#4E58A1' sin(millis()/100)*230
+  let bgSpeed = 100;
+  let lightness = sin(millis()/bgSpeed);
+  background(lightness * 10, lightness * 10, lightness * 255); //'#4E58A1' sin(millis()/100)*230
 
   if(!hasAudio) { return; }
 
