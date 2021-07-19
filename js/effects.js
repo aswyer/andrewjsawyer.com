@@ -23,7 +23,7 @@ var mouse = new THREE.Vector2();
 var groupWidth;
 var groupHeight;
 
-const radius = 100;
+var radius;
 
 var contentColor;
 var backgroundColor;
@@ -75,6 +75,8 @@ function updateColorVariables() {
 }
 
 function resizedWindow() {
+	radius = window.innerHeight * 0.2;
+
 	groupHeight = window.innerHeight;
 	groupWidth = window.innerWidth;
 
@@ -82,6 +84,7 @@ function resizedWindow() {
 	camera.position.z = 1;
 
 	renderer.setPixelRatio(window.devicePixelRatio);
+	
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	
 	var introSection = document.getElementsByClassName("introSection")[0];
@@ -93,7 +96,7 @@ function resizedWindow() {
 function addChildElements() {
 	for (var i = 0; i < 25 + Math.random() * 25; i++) {
 		var radius = 5;
-		if (i < 10) {
+		if (i < 7) {
 			radius += Math.random() * 50;
 		}
 		
