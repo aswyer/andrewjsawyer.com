@@ -94,7 +94,7 @@ function resizedWindow() {
 }
 
 function addChildElements() {
-	for (var i = 0; i < 25 + Math.random() * 25; i++) {
+	for (var i = 0; i < 10 + Math.random() * 10; i++) {
 		var radius = 5;
 		if (i < 7) {
 			radius += Math.random() * 50;
