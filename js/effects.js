@@ -75,7 +75,7 @@ function updateColorVariables() {
 }
 
 function resizedWindow() {
-	radius = window.innerHeight * 0.2;
+	radius = window.innerHeight * 0.1;
 
 	groupHeight = window.innerHeight;
 	groupWidth = window.innerWidth;
