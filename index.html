@@ -14,7 +14,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Andrew Sawyer</title>  
+  <title>Andrew Sawyer</title>
   <meta name="description" content="Student at Auburn bringing Design & Technology together.">
   <meta name="keywords" content="Interactive Design, iOS Development, User Interface Design, Interactive Animation, Atlanta, Alabama, Auburn, Auburn University, UI UX, Auburn Student, Mobile Design, ProtoPie, Swift, Maker, Designer, Developer, Christian, Believer">
   <meta name="author" content="Andrew Sawyer">
@@ -24,7 +24,61 @@
   
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <script type="module" src="js/effects.js"></script>
+
+  <!-- pixijs -->
+  <script src="https://pixijs.download/release/packages/polyfill.min.js"></script>
+  <script src="https://pixijs.download/release/packages/constants.min.js"></script>
+  <script src="https://pixijs.download/release/packages/math.min.js"></script>
+  <script src="https://pixijs.download/release/packages/math-extras.min.js"></script>
+  <script src="https://pixijs.download/release/packages/runner.min.js"></script>
+  <script src="https://pixijs.download/release/packages/settings.min.js"></script>
+  <script src="https://pixijs.download/release/packages/ticker.min.js"></script>
+  <script src="https://pixijs.download/release/packages/utils.min.js"></script>
+  <script src="https://pixijs.download/release/packages/display.min.js"></script>
+  <script src="https://pixijs.download/release/packages/core.min.js"></script>
+  <script src="https://pixijs.download/release/packages/events.min.js"></script>
+  <script src="https://pixijs.download/release/packages/unsafe-eval.min.js"></script>
+  <script src="https://pixijs.download/release/packages/mixin-get-child-by-name.min.js"></script>
+  <script src="https://pixijs.download/release/packages/mixin-get-global-position.min.js"></script>
+  <script src="https://pixijs.download/release/packages/extract.min.js"></script>
+  <script src="https://pixijs.download/release/packages/loaders.min.js"></script>
+  <script src="https://pixijs.download/release/packages/compressed-textures.min.js"></script>
+  <script src="https://pixijs.download/release/packages/basis.min.js"></script>
+  <script src="https://pixijs.download/release/packages/mesh.min.js"></script>
+  <script src="https://pixijs.download/release/packages/particle-container.min.js"></script>
+  <script src="https://pixijs.download/release/packages/sprite.min.js"></script>
+  <script src="https://pixijs.download/release/packages/accessibility.min.js"></script>
+  <script src="https://pixijs.download/release/packages/app.min.js"></script>
+  <script src="https://pixijs.download/release/packages/graphics.min.js"></script>
+  <script src="https://pixijs.download/release/packages/graphics-extras.min.js"></script>
+  <script src="https://pixijs.download/release/packages/mesh-extras.min.js"></script>
+  <script src="https://pixijs.download/release/packages/mixin-cache-as-bitmap.min.js"></script>
+  <script src="https://pixijs.download/release/packages/sprite-animated.min.js"></script>
+  <script src="https://pixijs.download/release/packages/sprite-tiling.min.js"></script>
+  <script src="https://pixijs.download/release/packages/spritesheet.min.js"></script>
+  <script src="https://pixijs.download/release/packages/text-bitmap.min.js"></script>
+  <script src="https://pixijs.download/release/packages/text.min.js"></script>
+  <script src="https://pixijs.download/release/packages/interaction.min.js"></script>
+  <script src="https://pixijs.download/release/packages/prepare.min.js"></script>
+  <script>
+    PIXI.Renderer.registerPlugin('accessibility', PIXI.AccessibilityManager);
+    PIXI.Renderer.registerPlugin('batch', PIXI.BatchRenderer);
+    PIXI.Renderer.registerPlugin('extract', PIXI.Extract);
+    PIXI.Renderer.registerPlugin('interaction', PIXI.InteractionManager);
+    PIXI.Renderer.registerPlugin('particle', PIXI.ParticleRenderer);
+    PIXI.Renderer.registerPlugin('prepare', PIXI.Prepare);
+    PIXI.Renderer.registerPlugin('tilingSprite', PIXI.TilingSpriteRenderer);
+    PIXI.Application.registerPlugin(PIXI.AppLoaderPlugin);
+    PIXI.Application.registerPlugin(PIXI.TickerPlugin);
+    PIXI.Loader.registerPlugin(PIXI.BasisLoader);
+    PIXI.Loader.registerPlugin(PIXI.CompressedTextureLoader);
+    PIXI.Loader.registerPlugin(PIXI.DDSLoader);
+    PIXI.Loader.registerPlugin(PIXI.KTXLoader);
+    PIXI.Loader.registerPlugin(PIXI.SpritesheetLoader);
+    PIXI.Loader.registerPlugin(PIXI.BitmapFontLoader);
+  </script>
+
+  <script type="module" src="js/pixiEffects.js"></script>
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -34,7 +88,6 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
 </head>
-
   <body>
     <div class="introSection rlMarginLarge">
       <h2 data-aos-delay="2500" data-aos="fade-down" class="mainName">ANDREW SAWYER</h2>
@@ -66,26 +119,32 @@
 <div class="keyInfoSection rlMargin topSectionSpacingLarge">
   <div data-aos="fade-up" id="interests">
     <h4>interests</h4>
-    <p>Interactive Design</p>
-    <p>iOS Development</p>
+    <p>iOS & macOS Development</p>
+    <p>Interaction & Visual Design</p>
     <p>Video & 3D Content</p>
   </div>
   <div data-aos="fade-up" id="tools">
     <h4>tools</h4>
-    <p>Adobe<br>
+    <p>
       Swift<br>
-      ProtoPie<br>
-      Blender</p>
+      UIKit<br>
+      SwiftUI<br>
+      AVFoundation
+    </p>
   </div>
-  <div data-aos="fade-up" id="socials">
-    <h4>social</h4>
-    <a target="_blank" href="https://www.linkedin.com/in/aswyer"><p>LinkedIn</p></a>
-    <a target="_blank" href="https://www.instagram.com/designbysawyer/"><p>Instagram</p></a>
-    <a target="_blank" href="https://www.behance.net/andrewsawyer"><p>Behance</p></a>
+  <div data-aos="fade-up" id="tools">
+    <h4>programs</h4>
+    <p>
+      Xcode<br>
+      Figma<br>
+      Adobe CC<br>
+      Blender
+    </p>
   </div>
   <div data-aos="fade-up" id="info">
     <h4>info</h4>
     <a target="_blank" href="assets/Resume – Andrew Sawyer.pdf"><p>Resume</p></a>
+    <a target="_blank" href="https://www.linkedin.com/in/aswyer"><p>LinkedIn</p></a>
     <a target="_blank" href="mailto:ajsawyer3@gmail.com"><p>Email</p></a>
     <a target="_blank" href="tel:470-226-7019"><p>Phone</p></a>
   </div>
@@ -100,7 +159,7 @@
     <div data-aos="fade-up">
       <img src="assets/content/featuredProjects/west.png" alt="">
       <h5>WEST</h5>
-      <p>WEST helps you create photos and "movements" with a beautiful film style through altering colors, adding grain, and overlaying dust. Designed interface, icons, & filter. Developed in Swift.</p>
+      <p>West gives photos the character of a film camera. Color a photo with West 1000, 2000, & 3000. Grain and dust are layered to emulate real film. Additionally, apply a light leak, bloom, or a slight blur to make the photo even more unique. Designed interface, icons, & filter. Developed in Swift using Realm, AVFoundation, & UIKit.</p>
       <p>iOS Design & Development</p>
     </div>
     </a>
@@ -114,12 +173,12 @@
     </div>
     </a>
 
-    <a target="_blank" href="https://www.behance.net/gallery/89993395/BLiNK-easy-cinematic-films">
+    <a target="_blank" href="https://www.youtube.com/watch?v=hGtGRSaiMv0">
     <div data-aos="fade-up">
-      <img src="assets/content/featuredProjects/blink.png" alt="">
-      <h5>BLiNK</h5>
-      <p>You film. BLiNK edits. After recording clips and selecting a song from a featured artist, BLiNK will turn your adventure into a well edited memory!</p>
-      <p>iOS Design & Development</p>
+      <img src="assets/content/featuredProjects/solid.png" alt="">
+      <h5>Solid</h5>
+      <p>Solid creates 3D models from images of an object at different angles. This is made possible by the RealityKit Object Capture API introduced in macOS 12. Solid features creation and preview of multiple quality levels, storage of models, a customizable viewport, and exporting in multiple formats.</p>
+      <p>macOS Development</p>
     </div>
     </a>
 
@@ -131,6 +190,10 @@
 
   <div class="allProjectContent">
 
+    <a data-aos="fade-up" loading="lazy" href="https://www.behance.net/gallery/89993395/BLiNK-easy-cinematic-films">
+      <img src="assets/content/allProjects/blink.png" alt="BLiNK - video editing app">
+    </a>
+
     <a data-aos="fade-up" loading="lazy" href="https://www.behance.net/gallery/89999767/The-Cave-procedural-terrain-generation">
       <img src="assets/content/allProjects/cave.png" alt="The Cave - procedural terrain generation">
     </a>
@@ -141,10 +204,6 @@
 
     <a data-aos="fade-up" loading="lazy" href="https://www.behance.net/gallery/93692333/Moonset-Visuals-premium-visuals-for-churches-and-vjs">
       <img src="assets/content/allProjects/moonsetVisuals.png" alt="Moonset Visuals - premium visuals for churches and vj’s">
-    </a>
-
-    <a data-aos="fade-up" loading="lazy" href="https://www.behance.net/gallery/89997123/ConcertCove-Ticket-Sales">
-      <img src="assets/content/allProjects/concertCove.png" alt="ConcertCove - ticket sales concept">
     </a>
 
     <a data-aos="fade-up" loading="lazy" href="https://www.instagram.com/p/B-AVqSRHYpA/">
