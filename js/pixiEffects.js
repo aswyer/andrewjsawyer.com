@@ -1,19 +1,31 @@
-//import '/js/@pixi/graphics-extras';
-
 class ShapeObject extends PIXI.Graphics {
 
 	constructor() {
-		super()
+		super();
 
 		this.acceleration = new PIXI.Point(0,0);
 		this.velocity = new PIXI.Point(0,0);
 
-		let radius = Math.random() * 50 + 5;
+		let radius = Math.random() * 30 + 6;
 		
-		this.lineStyle(2, 0xFFFFFF, 1);
+		this.lineStyle(2, 0xFFFFFF, 2);
 		//this.beginFill(0x650A5A, 1);
-		//this.drawStar(0, 0, 3 + Math.random() * 5, radius, radius, 0);
-		this.drawCircle(0,0, radius);
+
+		let random = Math.random();
+		if (random < 0.6) {
+			this.drawStar(0, 0, 2 + Math.random() * 2, radius, radius, 0);
+		} else if (random < 0.8) {
+			this.drawCircle(0,0, radius);
+		} else if (random < 0.9) {
+			this.drawRect(0, 0, radius, radius);
+		} else {
+			this.moveTo(0, 0);
+			this.lineTo(radius/2, radius);
+			this.lineTo(radius, 0);
+			this.lineTo(0,0);
+		}
+		//this.drawCircle(0,0, radius);
+		
 		//this.endFill();
 	}
 }
@@ -32,7 +44,7 @@ function init() {
 	//resize
 	app.renderer.autoResize = true;
 	windowResized();
-	mouse = new PIXI.Point(window.innerWidth/2,window.innerHeight/2);
+	mouse = new PIXI.Point(window.innerWidth*0.75, window.innerHeight/2);
 
 	addChildElements();
 
@@ -53,7 +65,7 @@ function mouseMoved(event) {
 
 
 function addChildElements() {
-	for (var i = 0; i < 10 + Math.random() * 10; i++) {
+	for (var i = 0; i < 10 + Math.random() * 20; i++) {
 		
 		var newShape = new ShapeObject();
 
@@ -86,12 +98,18 @@ function animate() {
 
 		} else {
 			const magnitude = 10 + Math.random() * (scopeRadius/2);
-
+ 
 			shapeObject.acceleration.x = (xDistance-shapeObject.velocity.x)/magnitude;
 			shapeObject.acceleration.y = (yDistance-shapeObject.velocity.y)/magnitude;
 		}
 
-		//shapeObject.rotation.z += 0.01;
+		
+		//not out of 1
+		// let alpha = Math.sqrt(shapeObject.acceleration.x^2 + shapeObject.acceleration.y^2)/Math.sqrt(window.innerWidth^2 + window.innerHeight^2) * 0.75 + 0.25
+		// console.log(alpha);
+		// shapeObject.alpha = alpha;
+
+		shapeObject.rotation += 0.01;
 
 		updateVelocityAndPosition(shapeObject);
 
