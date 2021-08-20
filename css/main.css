@@ -178,11 +178,12 @@ p {
   display: grid;
 
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
-#tools, #info {
+
+/* #tools, #info {
   justify-self: center;
-}
+} */
 .keyInfoSection a :hover {
   text-decoration: underline;
 }
@@ -292,9 +293,12 @@ p {
   /* - SECTION: keyInfoSection */
   .keyInfoSection {
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
   }
-
+  
+  /* .keyInfoSection br {
+    display: none;
+  } */
   
   #interests, #tools, #socials, #info {
     justify-self: center;
@@ -330,9 +334,9 @@ p {
   }
 
   /* - SECTION: keyInfoSection */
-  /* .keyInfoSection {
-    grid-template-rows: 1fr;
-  } */
+  .keyInfoSection {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 
   /* - SECTION: helper for featuredProjectSection & allProjectSection */
   .projectSection {
