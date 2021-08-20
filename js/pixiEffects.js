@@ -43,7 +43,7 @@ function init() {
 
 	//resize
 	app.renderer.autoResize = true;
-	windowResized();
+	initialWindowSize();
 	mouse = new PIXI.Point(window.innerWidth*0.75, window.innerHeight/2);
 
 	addChildElements();
@@ -125,7 +125,7 @@ function updateVelocityAndPosition(shapeObject) {
 	shapeObject.position.y += shapeObject.velocity.y/60;
 }
 
-function windowResized() {
+function initialWindowSize() {
 	var introSection = document.getElementsByClassName("introSection")[0];
 	introSection.style.height = window.innerHeight*0.8+"px";
 	introSection.style.paddingTop = window.innerHeight*0.1+"px";
@@ -133,5 +133,10 @@ function windowResized() {
 	
 	app.renderer.resize(window.innerWidth, window.innerHeight);
 
+	scopeRadius = window.innerHeight * 0.1;
+}
+
+function windowResized() {
+	app.renderer.resize(window.innerWidth, window.innerHeight);
 	scopeRadius = window.innerHeight * 0.1;
 }
