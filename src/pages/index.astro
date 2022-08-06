@@ -1,16 +1,21 @@
 ---
+import Hero from "../components/Hero.astro";
+import HeroGraphic from "../components/HeroGraphic.astro";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 import SectionLayout from "../layouts/SectionLayout.astro";
 ---
 
 <BasePageLayout title="aswyer">
 	<SectionLayout sectionID="hero">
-		<p>Andrew Sawyer</p>
+		<Hero>
+			<HeroGraphic client:load></HeroGraphic>
+		</Hero>
+
 	</SectionLayout>
 
-	<SectionLayout sectionID="video">
+	<!-- <SectionLayout sectionID="video">
 		<p>video</p>
-	</SectionLayout>
+	</SectionLayout> -->
 
 	<SectionLayout sectionID="interests">
 		<p>interests</p>
