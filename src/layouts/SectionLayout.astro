@@ -1,0 +1,10 @@
+---
+export interface Props {
+	sectionID: string;
+}
+
+const { sectionID } = Astro.props as Props;
+---
+
+<a id="{sectionID}"></a>
+<slot/>
