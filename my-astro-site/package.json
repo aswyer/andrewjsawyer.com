@@ -6,12 +6,10 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "devDependencies": {
-    "@pixi/graphics": "^6.5.1",
-    "@pixi/graphics-extras": "^6.5.1",
-    "astro": "^1.0.0-rc.6",
-    "pixi.js": "^6.5.1"
+    "astro": "^1.0.8"
   }
 }
