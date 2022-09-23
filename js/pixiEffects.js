@@ -42,7 +42,7 @@ function init() {
 	document.getElementById("renderView").appendChild(app.view);
 
 	//resize
-	app.renderer.autoResize = true;
+	app.renderer.autoDensity = true;
 	initialWindowSize();
 	mouse = new PIXI.Point(window.innerWidth*0.75, window.innerHeight/2);
 
