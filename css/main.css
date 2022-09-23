@@ -121,8 +121,8 @@ p {
 
 /* - SECTION: introSection */
 .introSection {
-  margin-top: 5rem;
-  height: 40rem;
+  /* margin-top: 5rem;
+  height: 40rem; */
   display: grid;
 
   grid-template-rows: 
